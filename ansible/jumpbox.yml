@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  roles:
+      - jumpbox
+  
+  tasks:
+  
+  - name: Set authorized key taken from file
+    ansible.posix.authorized_key:
+     user: user_1
+     state: present
+     key: "{{ lookup('file', '/home/Local_User/.ssh/KEY.pub') }}"
+  
+  
+  - name: Set authorized keys taken from url
+    ansible.posix.authorized_key:
+     user: user_2
+     state: present
+     key: https://github.com/user.keys
+
+  

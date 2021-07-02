@@ -1,0 +1,2 @@
+[bastion]
+<IP> ansible_ssh_user=ubuntu

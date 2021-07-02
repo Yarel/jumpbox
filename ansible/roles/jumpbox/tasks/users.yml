@@ -1,0 +1,11 @@
+---
+- name: Add users
+  user: 
+      name: "{{ item.name }}"
+      uid: "{{ item.uid }}"
+      groups: "{{ item.groups }}"
+      append: yes
+      createhome: yes
+      state: present
+      shell: /bin/bash
+  with_items: "{{unixusers}}" 

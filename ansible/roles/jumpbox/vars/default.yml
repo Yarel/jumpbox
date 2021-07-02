@@ -1,0 +1,6 @@
+unixgroups: 
+    - { name: 'dev', gid: '120' }
+
+unixusers:
+    - { name: 'USER_1', uid: '1001', groups: "sudo" }
+    - { name: 'USER_2', uid: '1002', groups: "dev" }

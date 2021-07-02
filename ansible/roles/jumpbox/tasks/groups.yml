@@ -1,0 +1,4 @@
+---
+- name: Add groups
+  group: name={{ item.name }} gid={{ item.gid }} state=present
+  with_items: "{{unixgroups}}"
